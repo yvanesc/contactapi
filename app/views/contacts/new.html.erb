@@ -1,2 +1,12 @@
-<h1>Contacts#new</h1>
-<p>Find me in app/views/contacts/new.html.erb</p>
+<h3>Add Contact</h3>
+<%= form_with model: @contact do |form| %>
+  <p>Firstname: <%= form.text_field :firstname %></p>
+  <p>Lastname: <%= form.text_field :lastname %></p>
+  <p>Fullname: <%= form.text_field :fullname %></p>
+  <p>Address: <%= form.text_area :address %></p>
+  <p>Email: <%= form.text_field :email %></p>
+  
+  <p>Mobile phone number: <%= form.number_field :mobile_phone_number %></p>
+
+  <%= form.submit %>
+<% end %>

@@ -1,2 +1,8 @@
-<h1>Skills#show</h1>
-<p>Find me in app/views/skills/show.html.erb</p>
+<h1><%= @skill.name %></h1>
+<%= link_to 'Edit', edit_skill_path(@skill) %>
+<p><b>Level:</b> <%= @skill.level %></p>
+
+<h4>Contact: <%= link_to @skill.contact.to_s, contact_path(@skill.contact) %></h4>
+
+<p><%= link_to 'Delete', @skill, method: 'delete', data: { confirm: 'Are you sure?' }%></p>
+<p><%= link_to 'Go back to all skills', skills_path %></p>

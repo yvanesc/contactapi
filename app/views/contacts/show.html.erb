@@ -1,2 +1,18 @@
-<h1>Contacts#show</h1>
-<p>Find me in app/views/contacts/show.html.erb</p>
+<h1><%= @contact.to_s %></h1>
+<%= link_to 'Edit', edit_contact_path(@contact) %>
+<p><b>Fullname:</b> <%= @contact.fullname %></p>
+<p><b>Address:</b> <%= @contact.address %></p>
+<p><b>Email:</b> <%= @contact.email %></p>
+<p><b>Mobile phone number:</b> <%= @contact.mobile_phone_number %></p>
+
+
+
+<h3>Skills</h3>
+<ul>
+  <% @contact.skills.each do |skill| %>
+  <li><%= link_to skill.name, skill_path(skill) %></li>
+  <% end %>
+</ul><br>
+
+<p><%= link_to 'Delete', @contact, method: 'delete', data: { confirm: 'Are you sure?' }%></p>
+<p><%= link_to 'Go back to all contact', contact_path %></p>
